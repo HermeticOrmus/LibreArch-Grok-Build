@@ -5,7 +5,7 @@ description: "Stub cue, not installed. Cache-aside / write-through / invalidatio
 
 # Caching Strategy
 
-> Stub, not installed by the plugin. The real depth is the [`caching-strategies`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/caching-strategies) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install caching-strategies@libre-arch-grok`.
+> Stub, not installed by the plugin. The real depth is the [`caching-strategies`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/caching-strategies) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install caching-strategies@LibreArch-Grok-Build`.
 
 Cache-aside / write-through / invalidation — pick with eyes open.
 

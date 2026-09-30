@@ -5,7 +5,7 @@ description: "Stub cue, not installed. Saga choreography vs orchestration + comp
 
 # Saga Compensation
 
-> Stub, not installed by the plugin. The real depth is the [`saga-patterns`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/saga-patterns) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install saga-patterns@libre-arch-grok`.
+> Stub, not installed by the plugin. The real depth is the [`saga-patterns`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/saga-patterns) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install saga-patterns@LibreArch-Grok-Build`.
 
 Saga choreography vs orchestration + compensation paths.
 

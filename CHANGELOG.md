@@ -11,12 +11,12 @@ The Grok edition: one marketplace add brings the Grok-native skills plus the Lib
 - `scripts/pin-pack.sh`: moves every pack entry to the pack's current main HEAD, adds new pack plugins, drops removed ones, and prints the diff. `--check` fails when the pack's plugin set changed.
 - `.github/workflows/validate.yml`: validates the plugin, checks the dogfood copies, checks every pinned commit is reachable, checks the pack plugin names, and installs every entry in a clean `GROK_HOME`.
 - Issue forms for feedback, routing misses and plugin proposals, with the `feedback`, `routing-miss` and `plugin-proposal` labels.
-- `LEDGER.md`, the kintsugi ledger: 8 cracks sealed, 3 open.
+- `LEDGER.md`, the kintsugi ledger: 9 cracks sealed, 3 open.
 
 ### Changed
 
 - The melted skills moved from `skills/` to `plugins/libre-arch-grok/skills/`. The stubs moved to `stubs/skills/` and the orchestrator from `AGENTS/` to `stubs/agents/`; none of them install. Each stub names the pack plugin that holds the real depth, and its description starts "Stub cue".
-- Install is `grok plugin marketplace add HermeticOrmus/LibreArch-Grok-Build`, then `grok plugin install <plugin>@libre-arch-grok`. README, QUICK_START, AGENTS, CONTRIBUTING, DEPTH_MATRIX and MELT_RULES follow the new layout.
+- Install is `grok plugin marketplace add HermeticOrmus/LibreArch-Grok-Build`, then `grok plugin install <plugin>@LibreArch-Grok-Build`. README, QUICK_START, AGENTS, CONTRIBUTING, DEPTH_MATRIX and MELT_RULES follow the new layout.
 - README header follows the Ormus GitHub standard; the Depth table counts what installs.
 - `.grok/skills/` stays as the dogfood copy of the plugin skills and the stubs, and `.grok/plugins/librearch-core/` stays as the dogfood copy of the stub orchestrator. CI keeps both in sync.
 - What a 0.1.0 user must change: delete the skill folders you copied from `skills/` (the stubs among them are cues, not skills), then install through the marketplace. If you installed the repo root directly, uninstall that plugin; the root holds no skills now.

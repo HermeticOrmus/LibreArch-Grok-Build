@@ -37,15 +37,17 @@ One marketplace brings the Grok-native plugin and every LibreArch-Claude-Code pl
 
 ```bash
 grok plugin marketplace add HermeticOrmus/LibreArch-Grok-Build
-grok plugin install libre-arch-grok@libre-arch-grok
-grok plugin install domain-driven-design@libre-arch-grok
+grok plugin install libre-arch-grok@LibreArch-Grok-Build
+grok plugin install domain-driven-design@LibreArch-Grok-Build
 ```
+
+Grok registers a marketplace added from GitHub under the repo's name, so the part after `@` is `LibreArch-Grok-Build`, not the manifest name `libre-arch-grok`. A bare plugin name also works when no other marketplace you added has a plugin by that name.
 
 Every entry at once (needs `jq`):
 
 ```bash
 for p in $(curl -fsSL https://raw.githubusercontent.com/HermeticOrmus/LibreArch-Grok-Build/main/.grok-plugin/marketplace.json | jq -r '.plugins[].name'); do
-  grok plugin install "$p@libre-arch-grok"
+  grok plugin install "$p@LibreArch-Grok-Build"
 done
 ```
 
