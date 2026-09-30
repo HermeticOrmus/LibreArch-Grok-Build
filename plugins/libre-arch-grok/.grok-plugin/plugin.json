@@ -1,0 +1,20 @@
+{
+  "name": "libre-arch-grok",
+  "version": "1.0.0",
+  "description": "Grok-native architecture skills: adr-write for decision records that age well, blast-radius-lite for evidence-based change reach, hexagonal-ports for ports, adapters and inward dependencies.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreArch-Grok-Build",
+  "repository": "https://github.com/HermeticOrmus/LibreArch-Grok-Build",
+  "license": "MIT",
+  "keywords": [
+    "architecture",
+    "adr",
+    "hexagonal",
+    "blast-radius",
+    "ddd",
+    "grok-build"
+  ]
+}

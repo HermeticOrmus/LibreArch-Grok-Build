@@ -1,0 +1,57 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  grok:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install the Grok Build CLI
+        run: |
+          curl -fsSL https://x.ai/cli/install.sh | bash
+          echo "$HOME/.grok/bin" >> "$GITHUB_PATH"
+      - name: Validate the Grok-native plugin
+        run: grok plugin validate plugins/libre-arch-grok
+      - name: Dogfood copies match their sources
+        run: |
+          set -euo pipefail
+          for src in plugins/libre-arch-grok/skills/*/SKILL.md stubs/skills/*/SKILL.md; do
+            name="$(basename "$(dirname "$src")")"
+            cmp "$src" ".grok/skills/$name/SKILL.md"
+          done
+          cmp stubs/agents/arch-orchestrator.md .grok/plugins/librearch-core/agents/arch-orchestrator.md
+          test "$(ls .grok/skills | wc -l)" -eq "$(( $(ls plugins/libre-arch-grok/skills | wc -l) + $(ls stubs/skills | wc -l) ))"
+      - name: Every pinned pack commit is reachable
+        run: |
+          set -euo pipefail
+          git init -q "$RUNNER_TEMP/probe"
+          jq -r '.plugins[].source | objects | "\(.url) \(.sha)"' .grok-plugin/marketplace.json | sort -u |
+          while read -r url sha; do
+            if git -C "$RUNNER_TEMP/probe" fetch -q --depth 1 "$url" "$sha"; then
+              echo "reachable: $url@$sha"
+            else
+              echo "::error::pinned commit $sha is not reachable in $url. Run scripts/pin-pack.sh."
+              exit 1
+            fi
+          done
+      - name: Pack entries match the pack's current plugins
+        run: scripts/pin-pack.sh --check
+      - name: Install every entry into a clean Grok home
+        run: |
+          set -euo pipefail
+          export GROK_HOME="$RUNNER_TEMP/grok-home"
+          mkdir -p "$GROK_HOME"
+          grok plugin marketplace add "$GITHUB_WORKSPACE"
+          mk="$(basename "$GITHUB_WORKSPACE")"
+          for p in $(jq -r '.plugins[].name' .grok-plugin/marketplace.json); do
+            grok plugin install "$p@$mk" --trust
+          done
+          grok plugin list
+          want="$(jq '.plugins | length' .grok-plugin/marketplace.json)"
+          got="$(grok plugin list --json | jq --arg mk "$mk" '[.[] | select(.marketplace == $mk)] | length')"
+          echo "installed $got of $want entries"
+          test "$got" -eq "$want"

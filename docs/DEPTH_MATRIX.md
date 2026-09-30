@@ -34,7 +34,24 @@ Never copy Claude plugin / agent / command totals into this inventory. Upstream 
 
 This repo now: **3 melted skills (L3–L4)**, **6 stub skills (L2)**, **1 stub agent (L2)**.
 
-Dogfood copies of every skill live at `.grok/skills/<name>/SKILL.md` and must match `skills/<name>/SKILL.md`.
+Dogfood copies of every skill live at `.grok/skills/<name>/SKILL.md` and must match their source: `plugins/libre-arch-grok/skills/<name>/SKILL.md` for melted skills, `stubs/skills/<name>/SKILL.md` for stubs. CI checks it.
+
+## v1.0.0: where each row lives
+
+Melted skills install as the `libre-arch-grok` plugin. Stubs stay in `stubs/` and never install; each names the pack plugin that holds the real depth. The 21 pack plugins install from the same marketplace, pinned to one commit of [LibreArch-Claude-Code](https://github.com/HermeticOrmus/LibreArch-Claude-Code) (see `.grok-plugin/marketplace.json`). They are installed depth, not this repo's inventory.
+
+| ID | Lives at | Installs | Real depth, installed by this marketplace |
+|----|----------|----------|-------------------------------------------|
+| adr-write | `plugins/libre-arch-grok/skills/adr-write/` | yes, in `libre-arch-grok` | this skill |
+| blast-radius-lite | `plugins/libre-arch-grok/skills/blast-radius-lite/` | yes, in `libre-arch-grok` | this skill |
+| hexagonal-ports | `plugins/libre-arch-grok/skills/hexagonal-ports/` | yes, in `libre-arch-grok` | this skill |
+| ddd-bounded-context | `stubs/skills/ddd-bounded-context/` | no | `domain-driven-design` |
+| system-design-lite | `stubs/skills/system-design-lite/` | no | `system-design` |
+| saga-compensation | `stubs/skills/saga-compensation/` | no | `saga-patterns` |
+| caching-strategy | `stubs/skills/caching-strategy/` | no | `caching-strategies` |
+| migration-strangler | `stubs/skills/migration-strangler/` | no | `migration-strategies` |
+| resilience-patterns | `stubs/skills/resilience-patterns/` | no | `circuit-breaker` |
+| arch-orchestrator | `stubs/agents/arch-orchestrator.md` | no | a specialist agent in each pack plugin |
 
 ## Suite
 
