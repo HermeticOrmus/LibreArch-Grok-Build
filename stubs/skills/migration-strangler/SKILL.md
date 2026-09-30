@@ -5,7 +5,7 @@ description: "Stub cue, not installed. Strangler fig / branch-by-abstraction mig
 
 # Migration Strangler
 
-> Stub, not installed by the plugin. The real depth is the [`migration-strategies`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/migration-strategies) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install migration-strategies@libre-arch-grok`.
+> Stub, not installed by the plugin. The real depth is the [`migration-strategies`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/migration-strategies) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install migration-strategies@LibreArch-Grok-Build`.
 
 Strangler fig / branch-by-abstraction migration plan.
 

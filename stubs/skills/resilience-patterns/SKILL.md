@@ -5,7 +5,7 @@ description: "Stub cue, not installed. Timeouts, retries, circuit breakers, bulk
 
 # Resilience Patterns
 
-> Stub, not installed by the plugin. The real depth is the [`circuit-breaker`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/circuit-breaker) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install circuit-breaker@libre-arch-grok`.
+> Stub, not installed by the plugin. The real depth is the [`circuit-breaker`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/circuit-breaker) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install circuit-breaker@LibreArch-Grok-Build`.
 
 Timeouts, retries, circuit breakers, bulkheads — defensive defaults.
 

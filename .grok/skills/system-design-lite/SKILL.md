@@ -5,7 +5,7 @@ description: "Stub cue, not installed. Capacity, consistency, and tech selection
 
 # System Design Lite
 
-> Stub, not installed by the plugin. The real depth is the [`system-design`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/system-design) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install system-design@libre-arch-grok`.
+> Stub, not installed by the plugin. The real depth is the [`system-design`](https://github.com/HermeticOrmus/LibreArch-Claude-Code/tree/main/plugins/system-design) plugin of LibreArch-Claude-Code, which this edition's marketplace installs: `grok plugin install system-design@LibreArch-Grok-Build`.
 
 Capacity, consistency, and tech selection sketch.
 

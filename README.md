@@ -32,9 +32,9 @@ See [QUICK_START.md](./QUICK_START.md) for the marketplace, dogfood, and copy pa
 
 ```bash
 grok plugin marketplace add HermeticOrmus/LibreArch-Grok-Build
-grok plugin install libre-arch-grok@libre-arch-grok
+grok plugin install libre-arch-grok@LibreArch-Grok-Build
 # Any pack plugin, pinned by commit, for example:
-grok plugin install domain-driven-design@libre-arch-grok
+grok plugin install domain-driven-design@LibreArch-Grok-Build
 grok plugin list
 ```
 

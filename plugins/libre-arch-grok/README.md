@@ -12,7 +12,7 @@ The Grok-native layer of [LibreArch-Grok-Build](https://github.com/HermeticOrmus
 
 ```bash
 grok plugin marketplace add HermeticOrmus/LibreArch-Grok-Build
-grok plugin install libre-arch-grok@libre-arch-grok
+grok plugin install libre-arch-grok@LibreArch-Grok-Build
 ```
 
 The same marketplace offers every LibreArch-Claude-Code plugin, pinned by commit.
