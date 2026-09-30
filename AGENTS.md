@@ -7,15 +7,15 @@
 
 ## How to use this suite
 
-1. Install skills (see [QUICK_START.md](./QUICK_START.md)).
+1. Install the marketplace (see [QUICK_START.md](./QUICK_START.md)): the `libre-arch-grok` plugin plus the LibreArch-Claude-Code plugins you need.
 2. Keep Reality OS as the global doctrine layer.
-3. Use suite skills for Arch; use `AGENTS/arch-orchestrator.md` when a full multi-skill pass is needed.
+3. Use suite skills for Arch; use `stubs/agents/arch-orchestrator.md` (stub coordinator, not installed) when a full multi-skill pass is needed.
 
 ## Agents in this repo
 
 | Agent | File | Role |
 |-------|------|------|
-| arch-orchestrator | `AGENTS/arch-orchestrator.md` | Coordinates ADR, blast radius, hexagonal, DDD, system design, saga, cache, migration, resilience into one architecture pass |
+| arch-orchestrator | `stubs/agents/arch-orchestrator.md` (stub; not installed) | Coordinates ADR, blast radius, hexagonal, DDD, system design, saga, cache, migration, resilience into one architecture pass |
 
 Project-level `AGENTS.md` in a consumer repo wins for project rules; this file is suite guidance.
 
